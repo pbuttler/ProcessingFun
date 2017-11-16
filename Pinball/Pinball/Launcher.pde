@@ -64,6 +64,3 @@ class Launcher {
     body.setUserData(this);
   }
 }
-
-
-

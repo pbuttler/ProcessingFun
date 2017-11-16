@@ -68,4 +68,3 @@ class Flipper{
     box2d.destroyBody(body);
   }
 }
-

@@ -47,7 +47,7 @@ class Ball {
   
   void applyLinearImpulse( Vec2 force ){
     Vec2 pos = body.getWorldCenter();
-    body.applyLinearImpulse(force, pos);
+    body.applyLinearImpulse(force, pos, true);
   }
   
   void destroy(){

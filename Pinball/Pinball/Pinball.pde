@@ -2,7 +2,7 @@
 //
 // Author: Peter Buttler
 
-import pbox2d.*;
+import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
 import org.jbox2d.common.*;
 import org.jbox2d.dynamics.*;
@@ -11,7 +11,7 @@ import org.jbox2d.collision.shapes.*;
 import org.jbox2d.collision.shapes.Shape;
 import org.jbox2d.dynamics.contacts.*;
 
-PBox2D box2d;
+Box2DProcessing box2d;
 ArrayList<Surface> surfaces;
 ArrayList<Bumper> bumpers;
 ArrayList<Mover> movers;
@@ -32,7 +32,7 @@ RevoluteJoint rightJoint;
 int score = 0;
 
 void setup(){
-  box2d = new PBox2D(this);
+  box2d = new Box2DProcessing(this);
   box2d.createWorld();
   box2d.setGravity(0,-10);
   box2d.listenForCollisions();
@@ -77,17 +77,13 @@ void setup(){
   // Launch guard ----------------------------------------
   points = new ArrayList<Vec2>();
   points.add(new Vec2(430,600));
-  for( int i=0; i<45; i++ ){
+  for( int i=0; i<45; i += 1 ){
     x = cos(radians(i))*200;
     y = sin(radians(i))*200-i;
     points.add(new Vec2(230+x,210-y));
   }
   points.add(new Vec2(372,160));
-  for( int i=90; i>0; i-- ){
-    x = cos(radians(i))*28;
-    y = sin(radians(i))*365;
-    points.add(new Vec2(372+x,525-y));
-  }
+  points.add(new Vec2(400,200));
   points.add(new Vec2(400,525));
   points.add(new Vec2(320,575));
   points.add(new Vec2(320,600));
@@ -414,5 +410,3 @@ void beginContact(Contact c){
     pinballWizardPower += 8;
   }
 }
-
-
