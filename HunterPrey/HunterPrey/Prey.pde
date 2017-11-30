@@ -59,4 +59,3 @@ class Prey extends Vehicle {
   
   
 }
-

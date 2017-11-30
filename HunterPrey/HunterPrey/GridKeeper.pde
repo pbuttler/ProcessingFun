@@ -1,13 +1,17 @@
 class gridKeeper {
+  
+  HashMap<Integer,ArrayList> spatialBuckets;
+  int cols, rows;
+  
   // Inital setup of the grid
   void createGrid(int gridWidth, int gridHeight, int cellSize){
     
     // Compute the dimensions of the grid
-    int cols = gridWidth / cellSize;
-    int rows = gridHeight / cellSize;
+    cols = gridWidth / cellSize;
+    rows = gridHeight / cellSize;
     
     //Create a map for tracking each grid cell as a 'bucket'
-    HashMap<Integer,ArrayList> spatialBuckets = new HashMap<Integer,ArrayList>(cols * rows);
+    spatialBuckets = new HashMap<Integer,ArrayList>(cols * rows);
     //Name each 'bucket'
     for (int i = 0; i < cols * rows; i++){
       spatialBuckets.put(i, new ArrayList<Vehicle>());
@@ -17,12 +21,28 @@ class gridKeeper {
   
   // Reset the buckets
   void ResetGrid(){
-    // TODO
+    spatialBuckets.clear();
+    for (int i = 0; i < cols * rows; i++){
+      spatialBuckets.put(i, new ArrayList<Vehicle>());
+    }
   }
   
   // Place an object in it's appropriate bucket
   void placeObject(Vehicle obj){
-   //TODO 
+   ArrayList<Integer> parentBuckets = getBucketsForVehicle(obj);
+   // Loop through the list of 'parentBuckets'
+   //    Add the obj to that bucket in 'spatialBuckets'
+   
+  }
+  
+  //Get the list of cells in which an object resides
+  ArrayList<Integer> getBucketsForVehicle(Vehicle obj){
+    ArrayList<Integer> buckets = new ArrayList<Integer>(4);
+    //TODO
+    // return a list of buckets
+    // will be between 1 and 4
+    //TODO
+    return buckets;
   }
   
 }
