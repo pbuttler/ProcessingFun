@@ -64,7 +64,12 @@ class gridKeeper {
   // Take a vector (position of a vehicle), float (width of a bucket), and a list
   //    Add the bucket housing the vector to the tracking list
   void AddBucket(PVector vector, float bucketWidth, ArrayList listOfBuckets){
+    double tmp = (Math.floor(vector.x / cellSize)) + (Math.floor(vector.y / cellSize)) * bucketWidth;
+    int idOfParentBucket = (int)tmp; 
     
+    if(!listOfBuckets.contains(idOfParentBucket)){
+     listOfBuckets.add(idOfParentBucket); 
+    }
   }
   
 }
