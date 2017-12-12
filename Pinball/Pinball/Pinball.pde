@@ -42,7 +42,7 @@ void setup(){
   bumpers = new ArrayList<Bumper>();
   movers = new ArrayList<Mover>();
   ghosts = new ArrayList<Ghost>();
-  pinballWizardPower = 250;
+  pinballWizardPower = 0;
   float x,y;
   ArrayList<Vec2> points = new ArrayList<Vec2>();
   

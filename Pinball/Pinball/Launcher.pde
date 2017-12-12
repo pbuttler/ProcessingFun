@@ -7,8 +7,8 @@ class Launcher {
   Launcher(float x_, float y_, boolean stat) {
     float x = x_;
     float y = y_;
-    w = 19;
-    h = 19;
+    w = 18;
+    h = 18;
     makeBody(new Vec2(x,y),w,h,stat);
   }
 
@@ -57,7 +57,7 @@ class Launcher {
     FixtureDef fd = new FixtureDef();
     fd.shape = sd;
     fd.density = 1;
-    fd.friction = 0.3;
+    fd.friction = 0.1;
     fd.restitution = 0.2;
 
     body.createFixture(fd);

@@ -26,9 +26,9 @@ class Spring {
     // And that's the target
     md.target.set(mp);
     // Some stuff about how strong and bouncy the spring should be
-    md.maxForce = 1000.0 * launcher.body.m_mass;
+    md.maxForce = 5000.0 * launcher.body.m_mass;
     md.frequencyHz = 5.0;
-    md.dampingRatio = 0.9;
+    md.dampingRatio = 5;
 
     mouseJoint = (MouseJoint) box2d.world.createJoint(md);
   }
